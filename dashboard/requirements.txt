@@ -1,0 +1,4 @@
+# Dashboard-only dependencies; the build pipeline uses requirements-dev.lock.txt.
+streamlit==1.67.0
+pandas==3.1.1
+duckdb==1.5.6

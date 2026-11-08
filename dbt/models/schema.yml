@@ -1,0 +1,39 @@
+version: 2
+models:
+  - name: dim_account
+    description: One fictional account for each support request in the current simulation.
+    columns:
+      - name: account_id
+        data_tests: [unique, not_null]
+      - name: request_id
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments: {to: "source('raw', 'fct_application')", field: request_id}
+  - name: fct_assistance
+    columns:
+      - name: episode_id
+        data_tests: [unique, not_null]
+      - name: request_id
+        data_tests: [unique, not_null]
+      - name: account_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: "ref('dim_account')", field: account_id}
+  - name: fct_account_month
+    columns:
+      - name: account_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: "ref('dim_account')", field: account_id}
+      - name: month_end
+        data_tests: [not_null]
+      - name: observed
+        data_tests: [not_null]
+  - name: fct_episode_outcome
+    columns:
+      - name: episode_id
+        data_tests: [unique, not_null]

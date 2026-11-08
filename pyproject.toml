@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hardship-insights"
+version = "0.1.0"
+description = "Synthetic support-journey analytics with governed metric contracts"
+requires-python = ">=3.12,<3.14"
+dependencies = ["duckdb>=1.1,<2", "dbt-duckdb>=1.9,<2", "streamlit>=1.40,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+hardship-insights = "hardship_insights.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,9 @@
+name: hardship_insights
+version: '0.2.0'
+config-version: 2
+profile: hardship_insights
+model-paths: [models]
+test-paths: [tests]
+models:
+  hardship_insights:
+    +materialized: table

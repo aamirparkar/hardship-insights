@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "seed": 42,
+  "customers": 10000,
+  "cutoff": "2026-10-31",
+  "start_date": "2024-01-01",
+  "outcomes": {
+    "missing_observation_probability": 0.05,
+    "current_payment_probability": 0.78
+  },
+  "assumptions": {
+    "request_probability": 0.35,
+    "unknown_arrears_probability": 0.05,
+    "withdrawal_probability": 0.18,
+    "approval_probability_after_nonwithdrawal": 0.8
+  }
+}

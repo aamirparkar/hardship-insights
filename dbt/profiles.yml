@@ -1,0 +1,7 @@
+hardship_insights:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('HARDSHIP_DB_PATH') }}"
+      threads: 1

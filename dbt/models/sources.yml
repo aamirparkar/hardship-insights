@@ -1,0 +1,9 @@
+version: 2
+sources:
+  - name: raw
+    schema: main
+    tables:
+      - name: raw_accounts
+      - name: raw_assistance
+      - name: raw_account_months
+      - name: fct_application
